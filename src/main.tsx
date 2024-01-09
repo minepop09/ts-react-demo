@@ -2,7 +2,7 @@
  * @Author: LxzLLL
  * @Date: 2024-01-01 10:39:11
  * @LastEditors: LxzLLL
- * @LastEditTime: 2024-01-06 18:20:03
+ * @LastEditTime: 2024-01-09 17:25:21
  * @FilePath: \ts-react-demo\src\main.tsx
  * @Description: 
  * 
@@ -18,8 +18,13 @@ import "@/assets/styles/global.scss"
 // 4、组件样式
 import App from './App.tsx'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+// ReactDOM.createRoot(document.getElementById('root')!).render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>,
+// )
+
+const root = ReactDOM.createRoot(document.getElementById('root')!)
+root.render(
+  <App/>
 )
