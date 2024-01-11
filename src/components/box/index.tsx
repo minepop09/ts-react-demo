@@ -14,6 +14,8 @@ import styles from './box.module.scss'
 
 import { useState } from 'react'
 import _ from 'lodash'
+import classNames from "classnames";
+
 function Box(){
     // count 状态变量
     // setCount 修改状态变量的方法
@@ -28,6 +30,7 @@ function Box(){
     }
 
     const[list, setList] = useState([1,20,15,22,13,16])
+    const[idx, setIdx] = useState(0)
 
     return (
         <div className={styles.box}>
@@ -42,10 +45,15 @@ function Box(){
             <p>
                 <div>
                     <Button type="primary" onClick={()=>setList(_.sortBy(list))}>升序排序</Button>
-                    <Button type="primary" onClick={()=>setList(_.sortBy(list,num=> -num))}>降序排序</Button>
+                    <Button type="primary" onClick={()=>setList(_.sortBy(list,(num: number)=> -num))}>降序排序</Button>
                 </div>
                 
-                {list.map(item=><span>{item} </span>)}
+                {list.map(
+                    (item: number, index: number)=>
+                    <span className={classNames(styles.testClass, {[styles.testFontStyle]:idx===index})} onClick={()=>setIdx(index)}>
+                        {item}&nbsp;
+                    </span>
+                )}
             </p>
         </div>
     )

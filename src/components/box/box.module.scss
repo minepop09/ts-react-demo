@@ -3,3 +3,12 @@ $borderColor:red;
 .box{
     border: solid 1px $borderColor;
 }
+
+.testClass{
+    color: blue;
+    font-size: 18px;
+}
+
+.testFontStyle{
+    font-weight: bold;
+}
